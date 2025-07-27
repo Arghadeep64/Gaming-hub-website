@@ -1,0 +1,236 @@
+/* 1. RESET */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 2. CSS VARIABLES */
+:root {
+  --color-primary: #00ffd0;
+  --color-bg: #0f0f0f;
+  --color-card-bg: #1c1c1c;
+  --color-card-hover-bg: #262626;
+  --transition-fast: 0.2s ease-in-out;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.4s ease;
+  --border-radius: 8px;
+  --grid-gap: 20px;
+}
+
+/* 3. DYNAMIC BACKGROUND */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url('https://wallpaperaccess.com/full/895265.jpg') center/cover no-repeat;
+  filter: brightness(1.1) blur(2px);
+  opacity: 0.85;
+  z-index: -2;
+  animation: bgZoomFade 60s ease-in-out infinite alternate;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(0,255,208,0.08), transparent 70%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+@keyframes bgZoomFade {
+  0%   { transform: scale(1);      opacity: 0.85; }
+  50%  { transform: scale(1.08) translate(2%, 2%); opacity: 1; }
+  100% { transform: scale(1);      opacity: 0.85; }
+}
+
+/* 4. BASE & HEADER */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--color-bg);
+  color: #fff;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 2.8rem;
+  color: var(--color-primary);
+  text-shadow:
+    0 0 10px rgba(0,255,208,0.6),
+    0 0 20px rgba(0,255,208,0.4);
+  animation: pulseShadow 8s ease-in-out infinite alternate;
+}
+
+@keyframes pulseShadow {
+  from { text-shadow: 0 0 10px rgba(0,255,208,0.6); }
+  to   { text-shadow: 0 0 20px rgba(0,255,208,0.8); }
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-top: 8px;
+}
+
+/* 5. CATEGORY BUTTONS */
+.categories-filter {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.category-btn {
+  margin: 0 6px;
+  padding: 8px 16px;
+  font-size: 0.95rem;
+  border: 1px solid #555;
+  background: #222;
+  color: #ddd;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition:
+    background var(--transition-base),
+    color var(--transition-base),
+    transform var(--transition-fast),
+    box-shadow var(--transition-base);
+}
+
+.category-btn:hover {
+  background: #444;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0,255,208,0.3);
+  transform: scale(1.08);
+}
+
+.category-btn.active {
+  background: var(--color-primary);
+  color: #000;
+  border-color: var(--color-primary);
+}
+
+/* 6. SEARCH BAR */
+.search-bar {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#searchInput {
+  width: 60%;
+  max-width: 400px;
+  padding: 10px 14px;
+  font-size: 1rem;
+  border-radius: var(--border-radius);
+  border: 1px solid #ccc;
+  transition:
+    box-shadow var(--transition-base),
+    border-color var(--transition-base);
+}
+
+#searchInput:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 10px rgba(0,255,208,0.6);
+}
+
+/* 7. GRID & CARDS */
+.game-grid {
+  display: grid;
+  gap: var(--grid-gap);
+  padding: 0 10px;
+}
+
+@media (max-width: 480px) {
+  .game-grid { grid-template-columns: 1fr; gap: 15px; }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  .game-grid { grid-template-columns: repeat(2,1fr); }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .game-grid { grid-template-columns: repeat(3,1fr); }
+}
+@media (min-width: 1025px) {
+  .game-grid { grid-template-columns: repeat(4,1fr); }
+}
+
+.game-card {
+  position: relative;
+  background: var(--color-card-bg);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  animation: fadeUp var(--transition-slow) ease both;
+}
+
+.game-card:nth-child(odd)  { animation-delay: 0.1s; }
+.game-card:nth-child(even) { animation-delay: 0.2s; }
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.game-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.game-card:hover {
+  background: var(--color-card-hover-bg);
+  transform: scale(1.06) translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,255,208,0.2);
+}
+
+.game-card:hover img {
+  transform: scale(1.1) rotate(1deg);
+}
+
+/* Always show game title */
+.game-card h2 {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 12px;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(5px);
+  color: #fff;
+  font-size: 1rem;
+  text-align: center;
+  transition: background var(--transition-fast);
+}
+
+.game-card:hover h2 {
+  background: rgba(0,0,0,0.8);
+}
+
+/* 8. NO RESULTS */
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 25px;
+  font-size: 1.2rem;
+  color: #ff6b6b;
+}
+
+/* 9. FOOTER */
+footer {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 0.9rem;
+  color: #888;
+}

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gaming Hub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🎮 Gaming Hub</h1>
+    <p>Your gateway to epic adventures</p>
+  </header>
+
+  <!-- Category Filter -->
+  <section class="categories-filter">
+    <button class="category-btn active" data-category="all">All</button>
+    <button class="category-btn" data-category="racing">Racing</button>
+    <button class="category-btn" data-category="shooter">Shooter</button>
+    <button class="category-btn" data-category="battle-royale">Battle Royale</button>
+    <button class="category-btn" data-category="moba">MOBA</button>
+    <button class="category-btn" data-category="sandbox">Sandbox</button>
+    <button class="category-btn" data-category="party">Party</button>
+  </section>
+
+  <!-- Search bar -->
+  <section class="search-bar">
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Search games..."
+    />
+  </section>
+
+  <!-- Game grid -->
+  <main class="game-grid">
+    <div class="game-card" data-title="Traffic Racer" data-category="racing">
+      <img
+        src="https://tse3.mm.bing.net/th/id/OIP.XKzq1WOAALVZEkH05jvX2AHaFj?w=512"
+        alt="Traffic Racer"
+      />
+      <h2>Traffic Racer</h2>
+    </div>
+
+    <div class="game-card" data-title="Pubg" data-category="battle-royale">
+      <img
+        src="https://tse4.mm.bing.net/th/id/OIP.IDYCBcvjqRxZJMinUYFtMAHaD9"
+        alt="Pubg"
+      />
+      <h2>Pubg</h2>
+    </div>
+
+    <div class="game-card" data-title="Fortnite" data-category="battle-royale">
+      <img
+        src="https://images.firstpost.com/wp-content/uploads/2020/04/Fortnite-1.jpg"
+        alt="Fortnite"
+      />
+      <h2>Fortnite</h2>
+    </div>
+
+    <div class="game-card" data-title="Call of Duty" data-category="shooter">
+      <img
+        src="https://th.bing.com/th/id/OIP.pwPHA5Jjnmzyo1NrS0yydAHaEK"
+        alt="Call of Duty"
+      />
+      <h2>Call of Duty</h2>
+    </div>
+
+    <div class="game-card" data-title="Minecraft" data-category="sandbox">
+      <img
+        src="https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/fr_CA/games/switch/m/minecraft-switch/hero"
+        alt="Minecraft"
+      />
+      <h2>Minecraft</h2>
+    </div>
+
+    <div class="game-card" data-title="Among Us" data-category="party">
+      <img
+        src="https://th.bing.com/th/id/OIP.P6wX6LtF2B7JssJGVXWAdQHaEK"
+        alt="Among Us"
+      />
+      <h2>Among Us</h2>
+    </div>
+
+    <div class="game-card" data-title="League of Legends" data-category="moba">
+      <img
+        src="https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_LeagueofLegends_RiotGames_S1_2560x1440-ee500721c06da3ec1e5535a88588c77f"
+        alt="League of Legends"
+      />
+      <h2>League of Legends</h2>
+    </div>
+
+    <div class="game-card" data-title="Valorant" data-category="shooter">
+      <img
+        src="https://th.bing.com/th/id/OIP.fczC8zMEhCQ0mOputxTuegHaED"
+        alt="Valorant"
+      />
+      <h2>Valorant</h2>
+    </div>
+
+    <div class="game-card" data-title="GTA V" data-category="racing">
+      <img
+        src="https://th.bing.com/th/id/OIP.Hh3B8ozy-mJzxEGpSAGyvQHaEo"
+        alt="GTA V"
+      />
+      <h2>GTA V</h2>
+    </div>
+
+    <div class="game-card" data-title="Temple Run 2" data-category="racing">
+      <img
+        src="https://tse1.mm.bing.net/th/id/OIP.uQM9uZx1nnSxCmgyLnnofQHaFj"
+        alt="Temple Run 2"
+      />
+      <h2>Temple Run 2</h2>
+    </div>
+
+    <div class="game-card" data-title="Apex Legends" data-category="battle-royale">
+      <img
+        src="https://cdn1.epicgames.com/spt-assets/5dcd88f4e2094a698ebffa43438edc33/apex-legends-27abg.jpg"
+        alt="Apex Legends"
+      />
+      <h2>Apex Legends</h2>
+    </div>
+    <div class="game-card" data-title="Dota 2" data-category="moba">
+      <img
+        src="https://assets.vg247.com/current/2014/08/dota-2-official.jpg"
+        alt="Dota 2"
+      />
+      <h2>Dota 2</h2>
+    </div>
+    <div class="game-card" data-title="Rocket League" data-category="racing">
+      <img
+        src="https://cdn1.epicgames.com/offer/9773aa1aa54f4f7b80e44bef04986cea/EGS_RocketLeague_PsyonixLLC_S3_2560x1440-1434001758900f513cab0c885121744a"
+        alt="Rocket League"
+      />
+      <h2>Rocket League</h2>
+    </div>
+    <div class="game-card" data-title="Fall Guys" data-category="party">
+      <img
+        src="https://th.bing.com/th/id/OIP.9GdCsYSeMXTI5x8OzaoWywHaEK?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"
+        alt="Fall Guys"
+      />
+      <h2>Fall Guys</h2>
+    </div>
+    <div class="game-card" data-title="Counter-Strike: Global Offensive" data-category="shooter">
+      <img
+        src="https://th.bing.com/th/id/OIP.alRiBvevr5x1MEdDL4gFMgHaEK?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"
+        alt="Counter-Strike: Global Offensive"
+      />
+      <h2>Counter-Strike: Global Offensive</h2>
+    </div>
+    <div class="game-card" data-title="Roblox" data-category="sandbox">
+      <img
+        src="https://wallpapers.com/images/hd/roblox-pictures-kr9dxy2z296bf7b9.jpg"
+        alt="Roblox"
+      />
+      <h2>Roblox</h2>
+    </div>
+    <div class="game-card" data-title="World of Warcraft" data-category="moba">
+      <img
+        src="https://www.pixelstalk.net/wp-content/uploads/2016/05/Wow-Wallpapers-HD.jpg"
+        alt="World of Warcraft"
+      />
+      <h2>World of Warcraft</h2>
+    </div>
+    <div class="game-card" data-title="FIFA 21" data-category="racing">
+      <img
+        src="https://th.bing.com/th/id/OIP.SRJOlgyYdQDoaruKhT-ligHaEK?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"
+        alt="FIFA 21"
+      />
+      <h2>FIFA 21</h2>
+    </div>
+    <div class="game-card" data-title="Overwatch" data-category="shooter">
+      <img
+        src="https://tse2.mm.bing.net/th/id/OIP.Gpvb3o1QVuFTLgwvBjisOwHaEK?rs=1&pid=ImgDetMain&o=7&rm=3"
+        alt="Overwatch"
+      />
+      <h2>Overwatch</h2>
+    </div>
+    <div class="game-card" data-title="Terraria" data-category="sandbox">
+      <img
+        src="https://th.bing.com/th/id/OIP.ieeQIlrtxi-N2TlNT9LQpgHaEK?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"
+        alt="Terraria"
+      />
+      <h2>Terraria</h2>
+    </div>
+
+  </main>
+
+  <p id="noResults" class="no-results" style="display: none;">
+    No results found
+  </p>
+
+  <footer>
+    <p>&copy; 2025 Gaming Hub. Powered by Arghadeep.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
